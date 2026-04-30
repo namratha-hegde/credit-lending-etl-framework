@@ -1,0 +1,45 @@
+"""
+Auto-generated Airflow DAG.
+DO NOT EDIT MANUALLY.
+"""
+
+from airflow import DAG
+from airflow.operators.bash import BashOperator
+from datetime import datetime
+
+default_args = {
+    "owner": "data-engineering",
+    "retries": 1,
+}
+
+with DAG(
+    dag_id="{{ dag_id }}",
+    default_args=default_args,
+    schedule_interval="{{ schedule_interval }}",
+    start_date=datetime({{ start_year }}, {{ start_month }}, {{ start_day }}),
+    catchup=False,
+    tags={{ tags }},
+) as dag:
+
+    start = BashOperator(
+        task_id="start",
+        bash_command="echo 'Pipeline started'",
+    )
+
+    {% for dataset in datasets %}
+    process_{{ dataset }} = BashOperator(
+        task_id="process_{{ dataset }}",
+        bash_command="python main.py --dataset {{ dataset }} --env {{ environment }}",
+    )
+    {% endfor %}
+
+    end = BashOperator(
+        task_id="end",
+        bash_command="echo 'Pipeline finished'",
+    )
+
+    start >> [
+        {% for dataset in datasets %}
+        process_{{ dataset }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ] >> end
