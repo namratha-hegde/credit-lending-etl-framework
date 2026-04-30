@@ -1,0 +1,28 @@
+trigger:
+  branches:
+    include:
+      - main
+
+parameters:
+  - name: environment
+    type: string
+    default: dev
+    values: [dev, acc, prod]
+
+stages:
+  - stage: CodeQuality
+    jobs:
+      - job: LintAndTest
+        steps:
+          - script: |
+              pip install -r requirements.txt
+              pytest tests/
+
+  - stage: Deployment
+    dependsOn: CodeQuality
+    jobs:
+      - job: DeployDatabricks
+        steps:
+          - script: |
+              databricks bundle deploy -t ${{ parameters.environment }}
+              databricks bundle run -t ${{ parameters.environment }} dq_etl_job
