@@ -1,0 +1,18 @@
+environments:
+  dev:
+    name: Development
+    adls_base_path: abfss://dq@datalakedev.dfs.core.windows.net/
+    databricks_workspace: dbr-dev
+    log_level: DEBUG
+
+  acc:
+    name: Acceptance
+    adls_base_path: abfss://dq@datalakeacc.dfs.core.windows.net/
+    databricks_workspace: dbr-acc
+    log_level: INFO
+
+  prod:
+    name: Production
+    adls_base_path: abfss://dq@datalakeprod.dfs.core.windows.net/
+    databricks_workspace: dbr-prod
+    log_level: WARN

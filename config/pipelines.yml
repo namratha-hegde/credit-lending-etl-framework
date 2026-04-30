@@ -1,0 +1,28 @@
+pipelines:
+  risk_pipeline:
+    inputs:
+      - clients
+      - credits
+      - collaterals
+      - market_information
+
+    silver:
+      transformations:
+        - standardize_columns
+      dq_rules:
+        - not_null:
+            column: client_id
+
+    gold:
+      joins:
+        - left: clients
+          right: credits
+          on: client_id
+        - left: clients
+          right: collaterals
+          on: client_id
+
+      metrics:
+        - name: total_credit_exposure
+          type: sum
+          column: credit_amount

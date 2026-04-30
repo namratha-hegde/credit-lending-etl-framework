@@ -1,0 +1,28 @@
+datasets:
+  clients:
+    source:
+      format: excel
+      path: raw/clients.xlsx
+    silver: silver/clients/
+    gold: gold/clients/
+
+  credits:
+    source:
+      format: excel
+      path: raw/credits.xlsx
+    silver: silver/credits/
+    gold: gold/credits/
+
+  collaterals:
+    source:
+      format: excel
+      path: raw/collaterals.xlsx
+    silver: silver/collaterals/
+    gold: gold/collaterals/
+
+  market_information:
+    source:
+      format: excel
+      path: raw/market_information.xlsx
+    silver: silver/market_information/
+    gold: gold/market_information/
