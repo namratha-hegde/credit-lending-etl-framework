@@ -1,0 +1,6 @@
+﻿market_id,asset_type,asset_name,price,currency,timestamp,source
+M001,stock,ING,12.45,EUR,2024-01-01T10:00:00Z,external_api
+M002,stock,ABN_AMRO,14.2,EUR,2024-01-01T10:00:00Z,external_api
+M003,stock,ASML,680.5,EUR,2024-01-01T10:00:00Z,external_api
+M004,index,AEX,780.3,EUR,2024-01-01T10:00:00Z,external_api
+M005,commodity,Gold,1850.75,USD,2024-01-01T10:00:00Z,external_api

@@ -1,0 +1,6 @@
+﻿collateral_id,client_id,collateral_type,value,currency,description,created_at
+COL001,C001,savings,15000,EUR,Savings account balance,15-01-2023
+COL002,C002,car,12000,EUR,Toyota Corolla 2018,20-02-2023
+COL003,C003,stocks,50000,EUR,Tech portfolio,25-03-2023
+COL004,C004,savings,8000,EUR,Emergency fund,05-04-2023
+COL005,C005,real_estate,200000,EUR,Office building collateral,18-05-2023

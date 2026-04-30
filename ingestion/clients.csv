@@ -1,0 +1,6 @@
+﻿client_id,client_type,first_name,last_name,date_of_birth,company_name,registration_number,country,city,created_at
+C001,individual,John,Doe,12-04-1985,,,NL,Amsterdam,10-01-2023
+C002,individual,Jane,Smith,23-09-1990,,,NL,Rotterdam,15-02-2023
+C003,corporate,,,,TechNova BV,KVK123456,NL,Utrecht,20-03-2023
+C004,individual,Ali,Khan,05-11-1982,,,NL,The Hague,01-04-2023
+C005,corporate,,,,GreenEnergy NV,KVK654321,NL,Eindhoven,12-05-2023

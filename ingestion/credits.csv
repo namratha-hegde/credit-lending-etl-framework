@@ -1,0 +1,6 @@
+﻿credit_id,client_id,amount,currency,interest_rate,start_date,end_date,status,monthly_payment,balance
+CR001,C001,20000,EUR,5.5,01-02-2023,01-02-2028,active,382,18000
+CR002,C002,15000,EUR,6,01-03-2023,01-03-2027,active,290,14000
+CR003,C003,100000,EUR,4.5,01-04-2023,01-04-2033,active,1036,95000
+CR004,C004,12000,EUR,7.2,01-05-2023,01-05-2026,delayed,370,11000
+CR005,C005,250000,EUR,3.8,01-06-2023,01-06-2038,active,1450,240000
