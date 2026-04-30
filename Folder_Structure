@@ -1,0 +1,74 @@
+credit-lending-etl-framework/
+│
+├── config/
+│   ├── pipelines.yml
+│   ├── datasets.yml
+│   ├── environments.yml
+│   ├── dq_rules.yml
+│   └── logging.yml
+│
+├── framework/
+│   ├── core/
+│   │   ├── pipeline_engine.py
+│   │   ├── config_loader.py
+│   │   └── registry.py
+│   │
+│   ├── etl/
+│   │   ├── reader.py
+│   │   ├── writer.py
+│   │   ├── transformer.py
+│   │   └── executor.py
+│   │
+│   ├── dq/
+│   │   ├── rules.py
+│   │   ├── engine.py
+│   │   └── results.py
+│   
+│
+├── ingestion/
+│   ├── raw/
+│   │   └── raw_pipeline.py
+│   │
+│   ├── silver/
+│   │   └── silver_pipeline.py
+│   │
+│   ├── gold/
+│   │   └── gold_pipeline.py
+│   │
+|   ├── clients.csv
+│   ├── collaterals.csv
+│   ├── credits.csv
+│   └── market_data.csv
+│
+├── templates/
+│   ├── airflow_dag.py.j2
+│   ├── sql_validation.sql.j2
+│   └── transformation.sql.j2
+│
+├── tests/
+│   ├── test_config_loader.py
+│   ├── test_transformations.py
+│   ├── test_dq_rules.py
+│   └── test_pipeline_execution.py
+│
+|
+│
+├── databricks/
+│   ├── databricks.yml
+│   └── jobs/
+│       ├── raw_job.yml
+│       ├── silver_job.yml
+│       └── gold_job.yml
+│
+├── airflow/
+│   │   └── credit_lending_dag.py
+│   └── templates/
+│       └── dag_template.py.j2
+│
+|
+│── architecture.png
+│
+│
+├── README.md
+├── requirements.txt
+└── azure-pipelines.yml
